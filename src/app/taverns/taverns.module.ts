@@ -1,30 +1,26 @@
 
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { CommonModule } from '@angular/common';
+import { TavernsRoutingModule } from './taverns-routing.module';
+import { TavernsComponent } from './taverns.component';
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './common/auth/login/login.component';
-import { TokenInterceptor } from './common/auth/token.interceptor';
-import { HomeComponent } from './home.component';
-import { RegisterComponent } from './register/register.component';
 
 @NgModule({
  
-    declarations: [AppComponent, LoginComponent, HomeComponent, RegisterComponent],
+    declarations: [TavernsComponent],
     imports: [
+        CommonModule,
         FormsModule,
         HttpClientModule,
         NgbModule,
-        AppRoutingModule,
+        TavernsRoutingModule,
     ],
-    providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    ],
+
 })
-export class AppModule {}
+export class TavernsModule {}
