@@ -1,23 +1,31 @@
-<h2>Login</h2>
-<form>
+<h2>Register</h2>
+<form [formGroup] = "userType">
   <div class="row">
     <div class="col-md-6">
+
+      <label>User type</label>
+      <input type ="radio" class = "form-control" value = "Owner"> Admin
+      <input type ="radio" class = "form-control" value = "Manager"> Manager
+
+
       <label>User Name</label>
       <input type="text" class="form-control" [(ngModel)]="userName" name="userName" />
       <label>Password</label>
       <input type="password" class="form-control" [(ngModel)]="password" name="password" />
+
+
     </div>
     <div class="col-md-6"></div>
   </div>
   <br />
   <div class="row">
     <div class="col-md-6">
-      <button type="submit" class="btn btn-primary" (click)="login()">
+      <button type="submit" class="btn btn-primary" (click)="register()">
         Submit
       </button>
-      <span class="col-md-2"></span>
-      <button type="button" class="btn btn-primary" (click)="register()">
-        Register
+        <span class="col-md-2"></span>
+      <button type="button" class="btn btn-primary" (click)="cancel()">
+        Cancel
       </button>
     </div>
   </div>

@@ -23,5 +23,10 @@ export class LoginComponent {
                 console.log('username/password incorrect');
             },
         );
+    }  
+
+    register(): void {
+        this.router.navigateByUrl('/register');
     }
+
 }
