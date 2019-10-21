@@ -12,8 +12,8 @@ const getAllTaverns = async function(req) {
     try {
         result = await pool
             .request()
-            .input('tavernID', sql.Int, req.user.Id)
-            .query('select * from taverns where tavernID = @tavernID');
+            .input('userName', sql.Int, req.user.Id)
+            .query('select Taverns.TavernName, Users.TavernID from Users LEFT JOIN Taverns ON Users.TavernID = Taverns.ID WHERE Users.UserName = @userName');
     } catch (e) {
         throwError(e.message);
     }
