@@ -1,4 +1,4 @@
-const validator = require('validator');
+//const validator = require('validator');
 const sql = require('mssql');
 const bcrypt = require('bcrypt');
 const bcryptPromise = require('bcrypt-promise');
